@@ -11,6 +11,9 @@ import {
   COMPANY_FINANCIALS_WIDGET_CONFIG,
 } from "@/lib/constants";
 
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+
 export default async function StockDetails({ params }: StockDetailsPageProps) {
   const { symbol } = await params;
   const upperSymbol = symbol.toUpperCase();

@@ -1,6 +1,9 @@
 import { getWatchlistWithData } from "@/lib/actions/watchlist.actions";
 import WatchlistTable from "@/components/WatchlistTable";
 
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+
 export default async function WatchlistPage() {
   const watchlistData = await getWatchlistWithData();
 
