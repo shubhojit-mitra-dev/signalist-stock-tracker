@@ -1,0 +1,39 @@
+/* Add these styles to your existing CSS file */
+
+.bg-gray-750 {
+  background-color: rgb(55 65 81 / 0.8);
+}
+
+/* Enhanced table hover effects */
+.hover\:bg-gray-750:hover {
+  background-color: rgb(55 65 81 / 0.5);
+}
+
+/* Improved button focus states */
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Enhanced pagination button styling */
+.pagination-button {
+  @apply inline-flex items-center px-3 py-2 border text-sm font-medium rounded-md transition-colors;
+}
+
+.pagination-button-active {
+  @apply bg-blue-600 text-white border-blue-600;
+}
+
+.pagination-button-inactive {
+  @apply text-gray-300 bg-gray-800 border-gray-600 hover:bg-gray-700;
+}
+
+.pagination-button-disabled {
+  @apply opacity-50 cursor-not-allowed;
+}

@@ -3,6 +3,10 @@
 import { getDateRange, validateArticle, formatArticle } from '@/lib/utils';
 import { POPULAR_STOCK_SYMBOLS } from '@/lib/constants';
 import { cache } from 'react';
+import { auth } from '@/lib/better-auth/auth';
+import { headers } from 'next/headers';
+import { connectToDatabase } from '@/database/mongoose';
+import { Watchlist } from '@/database/models/watchlist.model';
 
 const FINNHUB_BASE_URL = 'https://finnhub.io/api/v1';
 const NEXT_PUBLIC_FINNHUB_API_KEY = process.env.NEXT_PUBLIC_FINNHUB_API_KEY ?? '';
@@ -172,10 +176,56 @@ export const searchStocks = cache(async (query?: string): Promise<StockWithWatch
       })
       .slice(0, 15);
 
+    // Get user's watchlist status for each stock
+    try {
+      const session = await auth.api.getSession({ headers: await headers() });
+      if (session?.user?.id) {
+        await connectToDatabase();
+        const userWatchlist = await Watchlist.find(
+          { userId: session.user.id },
+          { symbol: 1 }
+        ).lean();
+        
+        const watchlistSymbols = new Set(userWatchlist.map(item => item.symbol));
+        
+        // Update isInWatchlist status
+        mapped.forEach(stock => {
+          stock.isInWatchlist = watchlistSymbols.has(stock.symbol);
+        });
+      }
+    } catch (err) {
+      console.error('Error fetching watchlist status:', err);
+      // Continue with isInWatchlist: false for all stocks
+    }
+
     return mapped;
   } catch (err) {
     console.error('Error in stock search:', err);
     return [];
   }
 });
+
+export async function getStockProfile(symbol: string): Promise<{ symbol: string; company: string } | null> {
+  try {
+    const token = process.env.FINNHUB_API_KEY ?? NEXT_PUBLIC_FINNHUB_API_KEY;
+    if (!token) {
+      throw new Error('FINNHUB API key is not configured');
+    }
+
+    const url = `${FINNHUB_BASE_URL}/stock/profile2?symbol=${encodeURIComponent(symbol.toUpperCase())}&token=${token}`;
+    const profile = await fetchJSON<ProfileData>(url, 1800);
+
+    if (!profile || !profile.name) {
+      return null;
+    }
+
+    return {
+      symbol: symbol.toUpperCase(),
+      company: profile.name
+    };
+  } catch (err) {
+    console.error('Error fetching stock profile:', err);
+    return null;
+  }
+}
 

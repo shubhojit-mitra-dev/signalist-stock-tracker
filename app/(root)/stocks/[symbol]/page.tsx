@@ -1,5 +1,7 @@
 import TradingViewWidget from "@/components/TradingViewWidget";
 import WatchlistButton from "@/components/WatchlistButton";
+import { isInWatchlist } from "@/lib/actions/watchlist.actions";
+import { getStockProfile } from "@/lib/actions/finnhub.actions";
 import {
   SYMBOL_INFO_WIDGET_CONFIG,
   CANDLE_CHART_WIDGET_CONFIG,
@@ -11,13 +13,22 @@ import {
 
 export default async function StockDetails({ params }: StockDetailsPageProps) {
   const { symbol } = await params;
+  const upperSymbol = symbol.toUpperCase();
   const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`;
+
+  // Fetch stock profile and watchlist status in parallel
+  const [stockProfile, inWatchlist] = await Promise.all([
+    getStockProfile(upperSymbol),
+    isInWatchlist(upperSymbol)
+  ]);
+
+  const companyName = stockProfile?.company || upperSymbol;
 
   return (
     <div className="flex min-h-screen p-4 md:p-6 lg:p-8">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 w-full">
         {/* Left column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:col-span-4">
           <TradingViewWidget
             scriptUrl={`${scriptUrl}symbol-info.js`}
             config={SYMBOL_INFO_WIDGET_CONFIG(symbol)}
@@ -40,9 +51,13 @@ export default async function StockDetails({ params }: StockDetailsPageProps) {
         </div>
 
         {/* Right column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:col-span-2">
           <div className="flex items-center justify-between">
-            <WatchlistButton symbol={symbol.toUpperCase()} company={symbol.toUpperCase()} isInWatchlist={false} />
+            <WatchlistButton 
+              symbol={upperSymbol} 
+              company={companyName} 
+              isInWatchlist={inWatchlist} 
+            />
           </div>
 
           <TradingViewWidget
