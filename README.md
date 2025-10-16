@@ -1,178 +1,306 @@
-<div align="center">
-  <br />
-    <a href="https://youtu.be/gu4pafNCXng" target="_blank">
-      <img src="public/readme/hero.webp" alt="Project Banner">
-    </a>
-  <br />
+# 📈 Signalist Stock Tracker
 
-  <div>
-    <img src="https://img.shields.io/badge/-Next.js-black?style=for-the-badge&logoColor=white&logo=next.js&color=black"/>
-    <img src="https://img.shields.io/badge/-Better Auth-black?style=for-the-badge&logoColor=white&logo=betterauth&color=black"/>
-<img src="https://img.shields.io/badge/-Shadcn-black?style=for-the-badge&logoColor=white&logo=shadcnui&color=black"/>
-<img src="https://img.shields.io/badge/-Inngest-black?style=for-the-badge&logoColor=white&logo=inngest&color=black"/><br/>
+A modern, full-stack stock tracking application built with Next.js 15, featuring real-time market data, personalized watchlists, AI-powered insights, and automated email notifications. Track your favorite stocks with professional-grade charts, technical analysis, and market news.
 
-<img src="https://img.shields.io/badge/-MongoDB-black?style=for-the-badge&logoColor=white&logo=mongodb&color=00A35C"/>
-<img src="https://img.shields.io/badge/-CodeRabbit-black?style=for-the-badge&logoColor=white&logo=coderabbit&color=9146FF"/>
-<img src="https://img.shields.io/badge/-TailwindCSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=38B2AC"/>
-<img src="https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6"/>
+![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black)
+![React](https://img.shields.io/badge/React-19.1.0-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)
 
-  </div>
+## 🚀 Features
 
-  <h3 align="center">Stock Market App — Alerts, Charts, AI Insights</h3>
+### 📊 **Real-Time Market Dashboard**
+- **TradingView Widgets**: Professional-grade market overview, heatmaps, and news timeline
+- **Live Stock Quotes**: Real-time pricing data with percentage changes
+- **Market Analytics**: S&P 500 heatmap by market cap and performance
+- **Technical Analysis**: Buy/sell signals and advanced charting tools
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://youtu.be/gu4pafNCXng" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
-</div>
+### 🔍 **Advanced Stock Search & Discovery**
+- **Smart Search**: Debounced search with real-time suggestions via Finnhub API
+- **Company Profiles**: Detailed business information, market cap, and key metrics
+- **Stock Details**: Individual pages with comprehensive analysis and charts
+- **Popular Stocks**: Curated list of trending and popular securities
 
-## 📋 <a name="table">Table of Contents</a>
+### 📝 **Personal Watchlist Management**
+- **Custom Watchlists**: Add/remove stocks with instant updates
+- **Pagination**: Efficient handling of large watchlists
+- **Search & Filter**: Find specific stocks within your watchlist
 
-1. ✨ [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+### 🤖 **AI-Powered Insights**
+- **Gemini AI Integration**: Intelligent market analysis and personalized insights
+- **News Summaries**: AI-generated daily market summaries based on your watchlist
+- **Personalized Content**: Investment recommendations tailored to your profile
 
-## 🚨 Tutorial
+### 📧 **Automated Notifications**
+- **Welcome Emails**: Personalized onboarding experience
+- **Daily News Digest**: Automated email summaries of market news
+- **Custom Scheduling**: Background jobs with Inngest for reliable delivery
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
+### 🔐 **Secure Authentication**
+- **Better-Auth Integration**: Secure session management with MongoDB
+- **User Profiles**: Investment goals, risk tolerance, and preferences
+- **Protected Routes**: Middleware-based authentication for all features
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
+## 🛠️ Tech Stack
 
-<a href="https://youtu.be/gu4pafNCXng" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+### **Frontend**
+- **Framework**: Next.js 15.5.2 with App Router
+- **UI Library**: React 19.1.0 + Tailwind CSS 4
+- **Components**: Radix UI primitives with custom styling
+- **Icons**: Heroicons + Lucide React
+- **State Management**: React hooks + Server Actions
 
-## <a name="introduction">✨ Introduction</a>
+### **Backend**
+- **Runtime**: Node.js with TypeScript
+- **Database**: MongoDB with Mongoose ODM
+- **Authentication**: Better-Auth with MongoDB adapter
+- **Background Jobs**: Inngest with AI integration
+- **Email Service**: Nodemailer with Gmail SMTP
 
-AI-powered modern stock market app built with Next.js, Shadcn, Better Auth, and Inngest! Track real-time prices, set personalized alerts, explore company insights, and manage watchlists. The admin dashboard allows managing stocks, publishing news, and monitoring user activity, while event-driven workflows power automated alerts, AI-driven daily digests, earnings notifications, and sentiment analysis—perfect for devs who want a dynamic, real-time financial platform.
+### **API Integrations**
+- **Market Data**: Finnhub API for real-time quotes and company information
+- **Charts & Widgets**: TradingView embedding for professional analysis
+- **AI Processing**: Google Gemini API for intelligent content generation
+- **News Feed**: Automated news aggregation and summarization
 
-If you're getting started and need assistance or face any bugs, join our active Discord community with over **50k+** members. It's a place where people help each other out.
+## 🏗️ Architecture
 
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
+### Sequence Diagram
+```mermaid
+sequenceDiagram
+  autonumber
+  actor Cron as Scheduler
+  participant Inngest as Inngest Runtime
+  participant Func as sendDailyNewsSummary
+  participant Users as getAllUsersForNewsEmail
+  participant Watch as getWatchlistSymbolsByEmail
+  participant News as getNews (Finnhub)
+  participant AI as Summarizer (NEWS_SUMMARY_EMAIL_PROMPT)
+  participant Mail as sendNewsSummaryEmail
+  participant SMTP as Email Provider
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+  Cron->>Inngest: Trigger app/send.daily.news (cron 0 12 * * *)
+  Inngest->>Func: Invoke function handler
+  Func->>Users: Fetch all users for news email
+  loop For each user
+    Func->>Watch: Get watchlist symbols by email
+    alt Has symbols
+      Func->>News: Fetch per-symbol company news (<=6)
+    else No symbols or empty results
+      Func->>News: Fetch general market news (fallback)
+    end
+    Func->>AI: Summarize user-specific news
+    AI-->>Func: Summary text
+    Func->>Mail: Send summary email {email, date, content}
+    Mail->>SMTP: Send
+    SMTP-->>Mail: Accepted/Result
+  end
+  Func-->>Inngest: Return success message
+```
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as User
+  participant P as StockDetails (Server)
+  participant W as TradingView Widgets
+  participant B as WatchlistButton (Client)
 
-- **[Better Auth](https://www.better-auth.com/)** is a framework-agnostic authentication and authorization library for TypeScript. It provides built-in support for email/password login, social sign-on (Google, GitHub, Apple, and more), and multi-factor authentication, simplifying user authentication and account management.
+  U->>P: Request /stocks/{symbol}
+  activate P
+  P->>P: Build per-symbol widget configs
+  P-->>U: HTML with widgets and WatchlistButton
+  deactivate P
 
-- **[CodeRabbit](https://jsm.dev/stocks-coderabbit)** is an AI-powered code review assistant that integrates with GitHub. It helps developers catch bugs, enforce best practices, and maintain consistent code quality across pull requests, reducing manual review effort and speeding up the development workflow.
+  U->>W: Widgets load via embed scripts
+  note right of W: symbol-info, advanced-chart, technical-analysis,<br/>company-profile, financials
 
-
-- **[Finnhub](https://finnhub.io/)** is a real-time financial data API that provides stock, forex, and cryptocurrency market data. It offers developers access to fundamental data, economic indicators, and news, making it useful for building trading apps, dashboards, and financial analysis tools.
-
-- **[Inngest](https://jsm.dev/stocks-inngest)** is a platform for event-driven workflows and background jobs. It allows developers to build reliable, scalable automated processes such as real-time alerts, notifications, and AI-powered workflows.
-
-- **[MongoDB](https://www.mongodb.com/)** is a flexible, high-performance NoSQL database. It stores data in JSON-like documents, supports dynamic schemas, and provides robust features for scalability, replication, and querying.
-
-- **[Nodemailer](https://nodemailer.com/)** is a Node.js library for sending emails easily. It supports various transport methods such as SMTP, OAuth2, and third-party services, making it a reliable tool for handling transactional emails, notifications, and contact forms in applications.
-
-- **[Next.js](https://nextjs.org/docs)** is a powerful React framework for building full-stack web applications. It provides server-side rendering, static site generation, and API routes, allowing developers to create optimized and scalable apps quickly.
-
-- **[Shadcn](https://ui.shadcn.com/docs)** is an open-source library of fully customizable, accessible React components. It helps teams rapidly build consistent, visually appealing UIs while allowing full control over design and layout.
-
-- **[TailwindCSS](https://tailwindcss.com/)** is a utility-first CSS framework that allows developers to build custom, responsive designs quickly without leaving their HTML. It provides pre-defined classes for layout, typography, colors, and more.
-
-- **[TypeScript](https://www.typescriptlang.org/)** is a statically typed superset of JavaScript that improves code quality, tooling, and error detection. It is ideal for building large-scale applications and enhances maintainability.
-
-## <a name="features">🔋 Features</a>
-
-👉 **Stock Dashboard**: Track real-time stock prices with interactive line and candlestick charts, including historical data, and filter stocks by industry, performance, or market cap.
-
-👉 **Powerful Search**: Quickly find the best stocks with an intelligent search system that helps you navigate through Signalist.
-
-👉 **Watchlist & Alerts**: Create a personalized watchlist, set alert thresholds for price changes or volume spikes, and receive instant email notifications to stay on top of the market.
-
-👉 **Company Insights**: Explore detailed financial data such as PE ratio, EPS, revenue, recent news, filings, analyst ratings, and sentiment scores for informed decision-making.
-
-👉 **Real-Time Workflows**: Powered by **Inngest**, automate event-driven processes like price updates, alert scheduling, automated reporting, and AI-driven insights.
-
-👉 **AI-Powered Alerts & Summaries**: Generate personalized market summaries, daily digests, and earnings report notifications, helping users track performance and make data-driven decisions.
-
-👉 **Customizable Notifications**: Fine-tune alerts and notifications based on user watchlists and preferences for a highly personalized experience.
-
-👉 **Analytics & Insights**: Gain insights into user behavior, stock trends, and engagement metrics, enabling smarter business and trading decisions.
-
-And many more, including code architecture and reusability.
-
-## <a name="quick-start">🤸 Quick Start</a>
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
-Make sure you have the following installed on your machine:
-
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en)
-- [npm](https://www.npmjs.com/) (Node Package Manager)
-
-**Cloning the Repository**
-
-```bash
-git clone https://github.com/adrianhajdin/signalist_stock-tracker-app.git
-cd signalist_stock-tracker-app
+  U->>B: Click toggle watchlist
+  activate B
+  B->>B: Update local "added" state
+  B-->>U: Update icon/label
+  deactivate B
 ```
 
-**Installation**
+### **Data Flow**
+1. **User Authentication**: Better-Auth handles secure login/registration
+2. **Market Data**: Finnhub API provides real-time stock information
+3. **Watchlist Management**: MongoDB stores user preferences and selections
+4. **Background Processing**: Inngest handles automated emails and AI tasks
+5. **Real-Time Updates**: Server actions with optimistic UI updates
 
-Install the project dependencies using npm:
+### **Key Components**
+- **SearchCommand**: Debounced stock search with autocomplete
+- **TradingViewWidget**: Memoized widget renderer for charts and analysis
+- **WatchlistTable**: Paginated table with real-time data updates
+- **Header & Navigation**: Centralized navigation with user management
+
+## 🔧 Setup & Installation
+
+### **Prerequisites**
+- Node.js 18+ 
+- MongoDB database
+- Finnhub API key
+- Google Gemini API key
+- Gmail account for email service
+
+### **Environment Variables**
+Create a `.env.local` file with the following variables:
 
 ```bash
-npm install
-```
+# Database
+MONGODB_URI=mongodb://localhost:27017/signalist
 
-**Set Up Environment Variables**
-
-Create a new file named `.env` in the root of your project and add the following content:
-
-```env
-NODE_ENV='development'
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-
-# FINNHUB
-NEXT_PUBLIC_NEXT_PUBLIC_FINNHUB_API_KEY=
-FINNHUB_BASE_URL=https://finnhub.io/api/v1
-
-# MONGODB
-MONGODB_URI=
-
-# BETTER AUTH
-BETTER_AUTH_SECRET=
+# Authentication
+BETTER_AUTH_SECRET=your-secret-key-here
 BETTER_AUTH_URL=http://localhost:3000
 
-# GEMINI
-GEMINI_API_KEY=
+# Market Data APIs
+FINNHUB_API_KEY=your-finnhub-api-key
+NEXT_PUBLIC_FINNHUB_API_KEY=your-finnhub-api-key
 
-#NODEMAILER
-NODEMAILER_EMAIL=
-NODEMAILER_PASSWORD=
+# AI Integration
+GEMINI_API_KEY=your-gemini-api-key
+
+# Email Service
+NODEMAILER_EMAIL=your-gmail@gmail.com
+NODEMAILER_PASSWORD=your-app-password
+
+# Background Jobs
+INNGEST_EVENT_KEY=your-inngest-event-key
+INNGEST_SIGNING_KEY=your-inngest-signing-key
 ```
 
-Replace the placeholder values with your real credentials. You can get these by signing up at: [**MongoDB**](https://www.mongodb.com/products/platform/atlas-database), [**Gemini**](https://aistudio.google.com/prompts/new_chat?utm_source=chatgpt.com), [**Inngest**](https://jsm.dev/stocks-inggest), [**Finnhub**](https://finnhub.io).
+### **Installation Steps**
 
-**Running the Project**
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd signalist_stock-tracker-app
+   ```
 
-```bash
-npm run dev
-npx inngest-cli@latest dev
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   # Fill in your API keys and configuration
+   ```
 
-## <a name="links">🔗 Assets</a>
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/stocks-kit)**.
+5. **Open your browser**
+   Navigate to `http://localhost:3000`
 
-<a href="https://jsm.dev/stocks-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
+### **Database Setup**
+The application automatically connects to MongoDB using Mongoose. Ensure your MongoDB instance is running and accessible via the `MONGODB_URI` connection string.
 
-## <a name="more">🚀 More</a>
+## 📱 API Endpoints
 
-**Advance your skills with Next.js Pro Course**
+### **Finnhub Integration**
+- `/quote` - Real-time stock quotes
+- `/search` - Stock symbol search
+- `/company-profile2` - Company information
+- `/company-news` - Stock-specific news
+- `/news` - General market news
 
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
+### **Internal APIs**
+- `/api/inngest` - Webhook endpoint for background jobs
+- Server Actions for watchlist management and user operations
 
-<a href="https://jsm.dev/stocks-jsmpro" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
+## 🔄 Background Jobs
+
+### **Welcome Email Automation**
+- Triggered on user registration
+- Generates personalized welcome content using Gemini AI
+- Sends HTML email with investment guidance
+
+### **Daily News Summaries**
+- Scheduled daily at 12 PM
+- Fetches news for user watchlist stocks
+- AI-powered summarization and email delivery
+- Personalized content based on user preferences
+
+## 🎨 UI/UX Features
+
+### **Dark Mode Optimized**
+- Consistent dark theme across all components
+- TradingView widgets styled for dark backgrounds
+- Professional financial application aesthetic
+
+### **Responsive Design**
+- Mobile-first approach with Tailwind CSS
+- Optimized for desktop and mobile viewing
+- Adaptive layouts for different screen sizes
+
+### **Performance Optimizations**
+- Next.js Image optimization
+- Component memoization for complex widgets
+- API response caching with appropriate TTL
+- Debounced search to minimize API calls
+
+## 🔐 Security Features
+
+- **Session Management**: Secure cookie-based sessions with Better-Auth
+- **Route Protection**: Middleware-based authentication for all protected routes
+- **Input Validation**: Server-side validation for all user inputs
+- **API Rate Limiting**: Cached responses to prevent API abuse
+- **Environment Security**: Sensitive data stored in environment variables
+
+## 📧 Email Templates
+
+### **Welcome Email**
+- Personalized greeting with user's name
+- Investment guidance based on user profile
+- Introduction to platform features
+- AI-generated content for engagement
+
+### **Daily News Summary**
+- Market overview and key highlights
+- News specific to user's watchlist
+- AI-summarized content for quick reading
+- Professional newsletter format
+
+## 🚀 Deployment
+
+### **Vercel Deployment** (Recommended)
+1. Connect your repository to Vercel
+2. Configure environment variables in Vercel dashboard
+3. Deploy with automatic builds on git push
+
+### **Environment Configuration**
+Ensure all environment variables are properly set in your production environment, including:
+- Database connection strings
+- API keys for all external services
+- Email service credentials
+- Background job authentication
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Finnhub** for providing comprehensive market data APIs
+- **TradingView** for professional-grade charting widgets
+- **Google Gemini** for AI-powered content generation
+- **Better-Auth** for secure authentication infrastructure
+- **Inngest** for reliable background job processing
+
+---
+
+**Built with ❤️ for the financial technology community**
