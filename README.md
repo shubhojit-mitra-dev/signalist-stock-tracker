@@ -171,36 +171,6 @@ INNGEST_EVENT_KEY=your-inngest-event-key
 INNGEST_SIGNING_KEY=your-inngest-signing-key
 ```
 
-### **Installation Steps**
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd signalist_stock-tracker-app
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   # Fill in your API keys and configuration
-   ```
-
-4. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to `http://localhost:3000`
-
-### **Database Setup**
-The application automatically connects to MongoDB using Mongoose. Ensure your MongoDB instance is running and accessible via the `MONGODB_URI` connection string.
-
 ## 📱 API Endpoints
 
 ### **Finnhub Integration**
@@ -280,27 +250,3 @@ Ensure all environment variables are properly set in your production environment
 - API keys for all external services
 - Email service credentials
 - Background job authentication
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Finnhub** for providing comprehensive market data APIs
-- **TradingView** for professional-grade charting widgets
-- **Google Gemini** for AI-powered content generation
-- **Better-Auth** for secure authentication infrastructure
-- **Inngest** for reliable background job processing
-
----
-
-**Built with ❤️ for the financial technology community**
